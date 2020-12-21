@@ -46,7 +46,8 @@
         "s3:ListBucketVersions",
         "s3:PutAccelerateConfiguration",
         "s3:GetEncryptionConfiguration",
-        "s3:PutEncryptionConfiguration"
+        "s3:PutEncryptionConfiguration",
+        "s3:PutBucketPolicy"
       ],
       "Resource": [
         "arn:aws:s3:::serverlessjams*serverlessdeploy*"
@@ -96,7 +97,10 @@
     {
       "Effect": "Allow",
       "Action": [
-        "iam:PassRole"
+        "iam:PassRole",
+        "iam:CreateRole",
+        "iam:PutRolePolicy",
+        "iam:GetRole"
       ],
       "Resource": [
         "arn:aws:iam::*:role/*"
@@ -142,7 +146,8 @@
       "Action": [
         "logs:CreateLogGroup",
         "logs:CreateLogStream",
-        "logs:DeleteLogGroup"
+        "logs:DeleteLogGroup",
+        "logs:PutSubscriptionFilter"
       ],
       "Resource": [
         "arn:aws:logs:eu-central-1:*:*"
