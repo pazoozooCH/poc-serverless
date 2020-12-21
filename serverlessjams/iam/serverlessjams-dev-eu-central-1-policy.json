@@ -50,9 +50,19 @@
         "s3:PutBucketPolicy"
       ],
       "Resource": [
-        "arn:aws:s3:::serverlessjams*serverlessdeploy*"
+        "arn:aws:s3:::serverlessjams*serverlessdeploy*",
+        "arn:aws:s3:::serverlessjams-finch*"
       ]
     },
+    {
+      "Effect": "Allow",
+      "Action": [
+          "s3:*"
+      ],
+      "Resource": [
+          "arn:aws:s3:::serverlessjams-finch*"
+      ]
+  },
     {
       "Effect": "Allow",
       "Action": [
@@ -61,7 +71,8 @@
         "s3:DeleteObject"
       ],
       "Resource": [
-        "arn:aws:s3:::serverlessjams*serverlessdeploy*"
+        "arn:aws:s3:::serverlessjams*serverlessdeploy*",
+        "arn:aws:s3:::serverlessjams-finch*"
       ]
     },
     {
@@ -197,7 +208,8 @@
     {
       "Effect": "Allow",
       "Action": [
-        "s3:CreateBucket"
+        "s3:CreateBucket",
+        "s3:ListAllMyBuckets"
       ],
       "Resource": [
         "arn:aws:s3:::*"

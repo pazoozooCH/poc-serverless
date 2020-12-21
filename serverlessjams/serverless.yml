@@ -111,3 +111,12 @@ functions:
 #     NewOutput:
 #       Description: "Description for the output"
 #       Value: "Some output value"
+
+plugins:
+    - serverless-finch
+
+custom:
+  client:
+    bucketName: serverlessjams-finch
+    distributionFolder: frontend
+    errorDocument: index.html
